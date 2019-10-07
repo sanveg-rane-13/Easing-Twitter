@@ -16,11 +16,11 @@ class listener( StreamListener ):
 
 	def on_data( self, data ):
 		try:
-			#print data
-
+			# splitting data
 			tweet = data.split(',"text":"')[1].split('","source')[0]
 			print tweet
 
+			# reding from file
 			saveThis = str(time.time()) + '::'
 			saveFile = open('TwitterDB2.csv','a')
 			saveFile.write(data)
